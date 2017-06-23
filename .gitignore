@@ -19,5 +19,5 @@
 .idea/*
 # Ignore Byebug command history file.
 .byebug_history
-#/.idea/*
-/test/
+.idea/
+/tmp/
