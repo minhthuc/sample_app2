@@ -1,23 +1,33 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  layouts:
+    footer:
+      the: "The"
+      by: "by"
+      title: "the %{link} title"
+      title_: "Ruby on Rails Tutorial"
+      author: "Michael Hartl"
+      about: "About"
+      contact: "Contact"
+      news: "news"
+    header:
+      sample_app: "sample app"
+      home: "home"
+      help: "help"
+      login: "Log in"
+  static_pages:
+    help:
+      title: "Help"
+      get_help: "Get help on the Ruby on Rails Tutorial at the"
+      help_page: "Rails Tutorial help page"
+      see_help: "To get help on this sample app, see the"
+      rubyOnRail: "<em>Ruby on Rails Tutorial</em> book."
+    home:
+      welcome: "Welcome to the Sample App"
+      this_homepage: "This is the home page for the %{link} sample application"
+      ror_tut: "Ruby on Rails Tutorial"
+      sample: "sample application."
+      sign_up: "Sign up now!"
+  user:
+    new:
+      new: "User#new"
+      find_me: "Find me in app/views/user/new.html.erb"
