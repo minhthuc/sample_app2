@@ -79,9 +79,6 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
 
-  a {
-    color: $gray;
-
     &:hover {
       color: $gray-darker;
     }
@@ -100,14 +97,83 @@ footer {
       margin-left: 15px;
     }
   }
-}
 
 //miscellaneous
-
 .debug-dump {
   clear: both;
   float: left;
   margin-top: 45px;
   width: 100%;
   @include box-sizing;
+}
+
+//sidebar
+aside {
+  section.user-info {
+    margin-top: 20px;
+  }
+
+  section {
+    margin-top: 20px;
+    padding: 10px 0;
+
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+
+    span {
+      display: block;
+      line-height: 1em;
+      margin-bottom: 3px;
+    }
+
+    h1 {
+      font-size: 1.4em;
+      letter-spacing: -1px;
+      margin: 3px;
+      text-align: left;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar-edit {
+  margin-top: 15px;
+}
+
+//forms
+input,
+textarea,
+select,
+.uneditable-input {
+  border: 1px solid $border-text-area;
+  margin-bottom: 15px;
+  width: 100%;
+  @include box-sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.error-explanation {
+  color: $error-color;
+
+  ul {
+    color: $error-color;
+    margin: 0 0 30px;
+  }
+}
+
+.field-with-errors {
+  @extend .has-error;
+
+  .form-control {
+    color: $state-danger-text;
+  }
 }
