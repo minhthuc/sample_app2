@@ -14,6 +14,11 @@ en:
       home: "home"
       help: "help"
       login: "Log in"
+      profile: "Profile"
+      setting: "Setting"
+      log_out: "Log out"
+      log_in: "log in"
+      account: "Account"
   static_pages:
     help:
       title: "Help"
@@ -30,7 +35,7 @@ en:
       logo: "Rail logo"
   users:
     new:
-      new: "User#new"
+      user: "User"
       find_me: "Find me in app/views/user/new.html.erb"
       sign_up: "Sign up"
       confirm: "Confirmation"
@@ -42,3 +47,10 @@ en:
   user_signup:
     success-signup: "Welcome to Sample App!"
     warning-signup: "Somethings wrong"
+  sessions:
+    new:
+      log_in: "Log in"
+      new_user: "New user?"
+      remember_me: "Remember me on this computer"
+    create:
+      message_danger: "Invalid email/password combination"
