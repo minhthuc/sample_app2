@@ -79,6 +79,9 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
 
+  a {
+    color: $gray;
+
     &:hover {
       color: $gray-darker;
     }
@@ -97,6 +100,7 @@ footer {
       margin-left: 15px;
     }
   }
+}
 
 //miscellaneous
 .debug-dump {
