@@ -20,14 +20,25 @@ en:
       get_help: "Get help on the Ruby on Rails Tutorial at the"
       help_page: "Rails Tutorial help page"
       see_help: "To get help on this sample app, see the"
-      rubyOnRail: "<em>Ruby on Rails Tutorial</em> book."
+      rubyOnRail: "Ruby on Rails Tutorial book."
     home:
       welcome: "Welcome to the Sample App"
       this_homepage: "This is the home page for the %{link} sample application"
       ror_tut: "Ruby on Rails Tutorial"
       sample: "sample application."
       sign_up: "Sign up now!"
-  user:
+      logo: "Rail logo"
+  users:
     new:
       new: "User#new"
       find_me: "Find me in app/views/user/new.html.erb"
+      sign_up: "Sign up"
+      confirm: "Confirmation"
+      create_account: "Create my account"
+  shared:
+    error_messages:
+      errors: "The form contain %{num}"
+      error: "error"
+  user_signup:
+    success-signup: "Welcome to Sample App!"
+    warning-signup: "Somethings wrong"
