@@ -51,5 +51,6 @@ en:
     new:
       log_in: "Log in"
       new_user: "New user?"
+      remember_me: "Remember me on this computer"
     create:
       message_danger: "Invalid email/password combination"

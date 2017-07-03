@@ -104,11 +104,11 @@ footer {
 
 //miscellaneous
 .debug-dump {
+  @include box-sizing;
   clear: both;
   float: left;
   margin-top: 45px;
   width: 100%;
-  @include box-sizing;
 }
 
 //sidebar
@@ -155,10 +155,10 @@ input,
 textarea,
 select,
 .uneditable-input {
+  @include box-sizing;
   border: 1px solid $border-text-area;
   margin-bottom: 15px;
   width: 100%;
-  @include box-sizing;
 }
 
 input {
@@ -180,4 +180,18 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.checkbox {
+  margin: -10px 0 10px;
+
+  span {
+    font-weight: normal;
+    margin-left: 20px;
+  }
+}
+
+.session-remember-me {
+  margin-left: 0;
+  width: auto;
 }
