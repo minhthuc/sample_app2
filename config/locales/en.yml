@@ -9,6 +9,7 @@ en:
       about: "About"
       contact: "Contact"
       news: "news"
+
     header:
       sample_app: "sample app"
       home: "home"
@@ -40,6 +41,22 @@ en:
       sign_up: "Sign up"
       confirm: "Confirmation"
       create_account: "Create my account"
+    edit:
+      edit_user: "Edit user"
+      save: "Save changes"
+      change: "change"
+      update_profile: "Update your profile"
+      profile_update_sucess: "Profile updated"
+      fail_update: "Profile updated failure!"
+    index:
+      all: "All users"
+    user:
+      sure: "You sure?"
+      destroy:
+        deny: "Permission Denied!"
+        deleted: "User deleted"
+      delete: "delete"
+
   shared:
     error_messages:
       errors: "The form contain %{num}"
@@ -47,6 +64,7 @@ en:
   user_signup:
     success-signup: "Welcome to Sample App!"
     warning-signup: "Somethings wrong"
+
   sessions:
     new:
       log_in: "Log in"
@@ -54,3 +72,4 @@ en:
       remember_me: "Remember me on this computer"
     create:
       message_danger: "Invalid email/password combination"
+      please_log_in: "Please log in."
