@@ -1,8 +1,10 @@
 class User < ApplicationRecord
+  has_many :microposts
+
   attr_accessor :remember_token, :activation_token, :reset_token
 
   scope :sort, ->{order(name: :asc).where(activated: true)
-    .select(:id, :name, :email)}
+    .select :id, :name, :email}
 
   before_save {email.downcase!}
   before_create :create_activation_digest
@@ -69,6 +71,10 @@ class User < ApplicationRecord
 
   def send_password_reset_email
     UserMailer.password_reset(self).deliver_now
+  end
+
+  def feed
+    Micropost.select_item id
   end
 
   private
