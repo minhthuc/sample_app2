@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :verify_admin!, only: :destroy
 
   def index
-    @users = User.select(:id, :name, :email).order_by_name.paginate page: params[:page],
+    @users = User.sort.paginate page: params[:page],
       per_page: Settings.user.per_page_size
   end
 
@@ -17,9 +17,9 @@ class UsersController < ApplicationController
     @user = User.new user_params
 
     if @user.save
-      log_in @user
-      flash[:success] = t "user_signup.success-signup"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:success] = t "users.new.success"
+      redirect_to root_path
     else
       flash.now[:warning] = t "user_signup.warning-signup"
       render :new
@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   def show
     return if @user
     render file: "public/404.html"
+    redirect_to root_url && return unless @user.activated
   end
 
   def edit

@@ -37,10 +37,10 @@ en:
   users:
     new:
       user: "User"
-      find_me: "Find me in app/views/user/new.html.erb"
       sign_up: "Sign up"
       confirm: "Confirmation"
       create_account: "Create my account"
+      success: "Your account have created, please check activation code"
     edit:
       edit_user: "Edit user"
       save: "Save changes"
@@ -56,6 +56,7 @@ en:
         deny: "Permission Denied!"
         deleted: "User deleted"
       delete: "delete"
+    controller:
 
   shared:
     error_messages:
@@ -73,3 +74,17 @@ en:
     create:
       message_danger: "Invalid email/password combination"
       please_log_in: "Please log in."
+    controller:
+      message: "Account not activated. Check your email for the activation link."
+  mailer:
+    account_activation:
+      controller:
+        acc_active: "Account activated!"
+        invalid_link: "Invalid activation link"
+      view:
+        hi: "Hi! %{name}"
+        welcome: "Welcome to the Sample App! Click on the link below to
+          activate your account:"
+        active: "Activate"
+      usermailer:
+        subject: "Account activation"
