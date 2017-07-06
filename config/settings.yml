@@ -12,4 +12,4 @@ micropost:
   content:
     max_length: 140
   hour_expired: 2
-  max_size: 5
+  size: 5

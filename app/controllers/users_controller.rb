@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :show]
   before_action :correct_user, only: [:edit, :update]
-  before_action :load_user, only: [:destroy, :show]
+  before_action :load_user, only: [:destroy, :show, :following, :followers]
   before_action :verify_admin!, only: :destroy
 
   def index
@@ -52,6 +52,20 @@ class UsersController < ApplicationController
       flash[:warning] = t "users.user.destroy.deny"
     end
     redirect_to users_path
+  end
+
+  def following
+    @title = t "users.controller.following"
+    @users = @user.following.paginate page: params[:page],
+      per_page: Setting.user.per_page_size
+    render "show_follow"
+  end
+
+  def followers
+    @title = t "users.controller.follower"
+    @users = @user.followers.paginate page: params[:page],
+      per_page: Setting.user.per_page_size
+    render "show_follow"
   end
 
   private

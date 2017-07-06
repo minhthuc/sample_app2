@@ -37,7 +37,7 @@ en:
       post_micropost: "Micropost Feed"
   users:
     show:
-      microposts_count: "Micropost %{count}"
+      num_microposts: "Microposts: %{count}"
     new:
       user: "User"
       sign_up: "Sign up"
@@ -59,7 +59,14 @@ en:
         deny: "Permission Denied!"
         deleted: "User deleted"
       delete: "delete"
+    controller:
+      following: "Following %{count}"
+      follower: "Follower %{count}"
+    follow: "Follow"
+    unfollow: "Unfollow"
   shared:
+    stats:
+      view_profile: "View my Profile"
     error_messages:
       errors: "The form contain %{num}"
       error: "error"
@@ -125,7 +132,6 @@ en:
     controller:
       message: "Account not activated. Check your email for the activation link."
       deleted: "Micropost deleted"
-      failer_delete: "Can not deleted this post"
   mailer:
     account_activation:
       controller:
