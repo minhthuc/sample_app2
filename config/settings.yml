@@ -8,3 +8,4 @@ user:
     min_length: 6
   avatar_size: 50
   per_page_size: 10
+  hour_expired: 2
