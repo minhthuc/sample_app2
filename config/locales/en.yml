@@ -34,7 +34,10 @@ en:
       sample: "sample application."
       sign_up: "Sign up now!"
       logo: "Rail logo"
+      post_micropost: "Micropost Feed"
   users:
+    show:
+      microposts_count: "Micropost %{count}"
     new:
       user: "User"
       sign_up: "Sign up"
@@ -56,16 +59,19 @@ en:
         deny: "Permission Denied!"
         deleted: "User deleted"
       delete: "delete"
-    controller:
-
   shared:
     error_messages:
       errors: "The form contain %{num}"
       error: "error"
+    user_infor:
+      view_profile: "view my profile"
+      micropost: "micropost"
+    micropost_form:
+      compose_new_post: "Compose new micropost..."
+      post: "Post"
   user_signup:
     success-signup: "Welcome to Sample App!"
     warning-signup: "Somethings wrong"
-
   sessions:
     new:
       forgot_password: "(forgot password)"
@@ -106,3 +112,35 @@ en:
         email_not_found: "Email address not found"
         can_not_empty: "can't be empty"
         password_just_reseted: "Password has been reset."
+  microposts:
+    controller:
+      create_success: "Micropost created!"
+    micropost:
+      sure: "You sure?"
+      delete: "delete"
+      posted: "Posted %{time} ago"
+      warning: "Maximum file size is 5MB. Please choose a smaller file."
+    model:
+      picture_warning: "should be less than 5MB"
+    controller:
+      message: "Account not activated. Check your email for the activation link."
+      deleted: "Micropost deleted"
+      failer_delete: "Can not deleted this post"
+  mailer:
+    account_activation:
+      controller:
+        acc_active: "Account activated!"
+        invalid_link: "Invalid activation link"
+      view:
+        hi: "Hi! %{name}"
+        welcome: "Welcome to the Sample App! Click on the link below to
+          activate your account:"
+        active: "Activate"
+    password_reset:
+      guild: "To reset your password click the link below:"
+      expired_time: "This link will expire in two hours."
+      ignore_mail: "If you did not request your password to be reset, please ignore this email and
+        your password will stay as it is."
+      usermailer:
+        subject: "Account activation"
+        ps_reset: "Password reset"

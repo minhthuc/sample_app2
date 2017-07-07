@@ -1,6 +1,25 @@
-<div class="center jumbotron">
-  <h1><%= t ".welcome" %></h1>
-  <h2><%= t(".this_homepage", link: link_to(t(".ror_tut"),
-    "http://www.railstutorial.org/")).html_safe %></h2>
-  <%= link_to t(".sign_up"), "users/new", class: "btn btn-lg btn-primary" %>
-</div>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render "shared/user_info" %>
+      </section>
+      <section class="micropost_form">
+        <%= render "shared/micropost_form", micropost: @micropost %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3><%= t ".post_micropost" %></h3>
+      <%= render "shared/feed", feed: @feed_items %>
+    </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h1><%= t ".welcome" %></h1>
+    <h2>
+      <%= t(".this_homepage", link: link_to(t(".ror_tut"),
+        "http://www.railstutorial.org/")).html_safe %>
+    </h2>
+    <%= link_to t(".sign_up"), "users/new", class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>

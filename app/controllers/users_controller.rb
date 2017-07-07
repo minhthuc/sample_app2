@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: [:destroy, :show]
   before_action :logged_in_user, only: [:edit, :update, :show]
   before_action :correct_user, only: [:edit, :update]
+  before_action :load_user, only: [:destroy, :show]
   before_action :verify_admin!, only: :destroy
 
   def index
@@ -27,8 +27,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    return if @user
-    render file: "public/404.html"
+    @microposts = @user.microposts.sort_by_time.paginate page: params[:page],
+      per_page: Settings.user.per_page_size
     redirect_to root_url && return unless @user.activated
   end
 
@@ -61,13 +61,6 @@ class UsersController < ApplicationController
       :password_confirmation
   end
 
-  def logged_in_user
-    return if logged_in?
-    store_location
-    flash[:danger] = t "sessions.create.please_log_in"
-    redirect_to login_url
-  end
-
   def correct_user
     @user = User.find_by id: params[:id]
 
@@ -81,8 +74,7 @@ class UsersController < ApplicationController
 
   def load_user
     @user = User.find_by id: params[:id]
-
-    return if @user
-    render file: "public/404.html"
+    render file: "public/404.html" unless @user
   end
+
 end

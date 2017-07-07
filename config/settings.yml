@@ -8,4 +8,8 @@ user:
     min_length: 6
   avatar_size: 50
   per_page_size: 10
+micropost:
+  content:
+    max_length: 140
   hour_expired: 2
+  max_size: 5
