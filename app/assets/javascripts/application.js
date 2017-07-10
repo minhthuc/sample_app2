@@ -19,9 +19,12 @@
 //= require i18n.js
 //= require i18n/translations
 
-$('#micropost_picture').bind('change', function() {
-  var size_in_megabytes = this.files[0].size/1024/1024;
-  if (size_in_megabytes > Settings.micropost.max_size) {
-    alert(I18n.t('microposts.micropost.warning'));
-  }
-});
+$(document).ready(function () {
+  var max_size_file = document.getElementById('new_micropost').getAttribute('data-max')
+  $('#micropost_picture').change(function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > max_size_file) {
+      alert(I18n.t('microposts.micropost.warning'));
+    }
+  });
+})
