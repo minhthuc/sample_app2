@@ -1,0 +1,14 @@
+<li>
+  <%= link_to gravatar_for load_user(post.user_id), load_user(post.user_id) %>
+  <h5><%= link_to post.title, post %></h5>
+  <p class="text-right"><%= post.created_at %></p>
+  <p class="sort-description"><%= post.body %></p>
+  <p class="text-right"><%= link_to "read more", post %></p>
+  <% if 0 != comment_size(post) %>
+    <p class="text-right"><%= comment_size post %> comments</p>
+  <% end %>
+  <% if logged_in? && current_user.id == post.user_id %>
+  <%= link_to t("microposts.micropost.delete"), post, method: :delete, data:
+    {comfirm: "Are you sure ?"} %>
+  <% end %>
+</li>

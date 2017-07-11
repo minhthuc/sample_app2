@@ -6,7 +6,7 @@ class RelationshipsController < ApplicationController
     render file: "public/404.html" unless user
     render file: "public/404.html" unless current_user.follow user
     respond_to do |format|
-      format.html{redirect_to @user}
+      format.html{redirect_to user}
       format.js
     end
   end
@@ -16,7 +16,7 @@ class RelationshipsController < ApplicationController
     render file: "public/404.html" unless user
     render file: "public/404.html" unless current_user.unfollow user
     respond_to do |format|
-      format.html{redirect_to @user}
+      format.html{redirect_to user}
       format.js
     end
   end

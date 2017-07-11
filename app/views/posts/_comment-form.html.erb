@@ -1,0 +1,5 @@
+<%= form_for comment do |f| %>
+    <%= hidden_field_tag "comment[post_id]", post.id %>
+    <%= f.text_area :content, class: "form-control size-input-comment" %>
+    <%= f.submit t("microposts.micropost.comment"), class: "btn btn-primary btn-comment" %>
+<% end %>
