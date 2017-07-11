@@ -1,0 +1,29 @@
+<% if comments.any? %>
+  <% comments.each {|f| %>
+    <div class="row">
+      <div class="comment-box">
+        <div class="col-lg-2">
+          <%= gravatar_for load_user_name(f.user_id), size: 50 %>
+        </div>
+        <div class="col-lg-8">
+          <p class="text-success comment-part"><%= load_user_name(f.user_id).name
+          %></p>
+          <p><%= f.content %></p>
+        </div>
+        <div class="col-lg-2">
+          <p class="date-posted"><%= f.created_at.strftime("%H:%M") %></p>
+          <% if logged_in? %>
+            <% if current_user.id == f.user_id || current_user.blank?%>
+              <%= link_to t("post.controller.deleted"), f, method: :delete,
+                data:{confirm: t "microposts.micropost.sure"} %>/
+                  <%= t "microposts.micropost.sure" %>
+              <%= link_to t("posts.show.edit"), f, method: :delete,
+                data:{confirm: t "microposts.micropost.sure" } %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% } %>
+<% end %>
+

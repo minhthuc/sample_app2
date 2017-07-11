@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @microposts = @user.microposts.sort_by_time.paginate page: params[:page],
+    @posts = @user.posts.sort_by_time.paginate page: params[:page],
       per_page: Settings.user.per_page_size
     redirect_to root_url && return unless @user.activated
   end
@@ -57,14 +57,14 @@ class UsersController < ApplicationController
   def following
     @title = t "users.controller.following"
     @users = @user.following.paginate page: params[:page],
-      per_page: Setting.user.per_page_size
+      per_page: Settings.user.per_page_size
     render "show_follow"
   end
 
   def followers
     @title = t "users.controller.follower"
     @users = @user.followers.paginate page: params[:page],
-      per_page: Setting.user.per_page_size
+      per_page: Settings.user.per_page_size
     render "show_follow"
   end
 

@@ -303,3 +303,34 @@ span.picture {
     border: 0;
   }
 }
+
+//post
+.sort-description{
+  overflow-y: hidden;
+}
+
+//comment
+.field-comment{
+  min-height: 30px;
+  width: 100%;
+}
+.size-input-comment{
+  max-width: 80%;
+}
+.btn-comment{
+  float: right;
+  margin: -50px 50px;
+  max-width: 12%;
+  right: 0;
+}
+.author{
+  max-width: 30%;
+}
+.comment-box{
+  border-radius:5px;
+  margin-bottom: 10px;
+  background-color: #9eaacd;
+}
+.comment-part{
+  word-wrap:break-word;
+}
