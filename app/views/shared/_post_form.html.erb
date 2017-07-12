@@ -1,0 +1,8 @@
+<%= form_for post, html:{data:{max: Settings.micropost.size}} do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="field">
+    <%= f.text_area :title, placeholder: t("shared.micropost_form.compose_new_post") %>
+    <%= f.text_area :body, placeholder: t("shared.micropost_form.compose_new_title") %>
+  </div>
+  <%= f.submit t("layouts.header.post"), class: "btn btn-primary" %>
+<% end %>

@@ -4,4 +4,6 @@
     following_user_path(user) %>
   <%= link_to (t "users.controller.follower", count: user.followers.size),
     followers_user_path(user) %>
+  <br/>
+  <%= link_to user.posts.size, user %> posts
 </div>

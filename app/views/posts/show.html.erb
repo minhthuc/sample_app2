@@ -1,0 +1,26 @@
+<div class="row">
+<aside class="col-lg-4">
+  <section class="user_info">
+    <h1>
+      <%= gravatar_for @user %>
+      <%= @user.name %>
+    </h1>
+  </section>
+  <section class="stats">
+    <%= render "shared/stats", user: @user %>
+  </section>
+</aside>
+<div class="col-lg-8">
+  <h3 class="text-success text-center">
+    <%= @post.title %>
+  </h3>
+  <p class="text-justify">
+    <%= @post.body %>
+  </p>
+  <%= render "posts/show_comment", comments: @comments %>
+  <%= will_paginate @comments %>
+  <% if logged_in? %>
+    <%= render "comments/comment-form", post: @post, comment: @comment %>
+  <% end %>
+</div>
+</div>

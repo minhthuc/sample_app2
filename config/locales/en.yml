@@ -9,9 +9,9 @@ en:
       about: "About"
       contact: "Contact"
       news: "news"
-
     header:
-      sample_app: "sample app"
+      sample_app: "Mini blog"
+      post: "post"
       home: "home"
       help: "help"
       login: "Log in"
@@ -74,6 +74,7 @@ en:
       view_profile: "view my profile"
       micropost: "micropost"
     micropost_form:
+      compose_new_title: "Compose new title"
       compose_new_post: "Compose new micropost..."
       post: "Post"
   user_signup:
@@ -123,6 +124,7 @@ en:
     controller:
       create_success: "Micropost created!"
     micropost:
+      comment: "Comment"
       sure: "You sure?"
       delete: "delete"
       posted: "Posted %{time} ago"

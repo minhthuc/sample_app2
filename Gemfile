@@ -65,7 +65,8 @@ group :test do
 end
 
 group :production do
-  gem "pg", "0.18.4"
+  gem 'rails_12factor'
+  gem 'pg', '~> 0.20'
 end
-
+gem 'pg', '~> 0.20'
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw]

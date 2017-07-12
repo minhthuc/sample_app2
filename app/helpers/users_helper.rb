@@ -13,4 +13,5 @@ module UsersHelper
   def want_follow user
     @follower = user.active_relationships.build
   end
+
 end
